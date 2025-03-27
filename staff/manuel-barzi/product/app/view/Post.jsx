@@ -19,7 +19,7 @@ function Post(props) {
                             alert(error.message)
                         else if (error instanceof OwnershipError)
                             alert(error.message)
-                        else if (error instanceof SystemError)
+                        else
                             alert('sorry, there was a problem. try again later.')
 
                         console.error(error)

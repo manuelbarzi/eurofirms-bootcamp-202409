@@ -21,16 +21,16 @@ function CreatePost(props) {
                 .catch(error => {
                     if (error instanceof NotFoundError)
                         alert(error.message)
-                    else if (error instanceof SystemError)
+                    else
                         alert('sorry, there was a problem. try again later.')
 
                     console.error(error)
                 })
         } catch (error) {
             if (error instanceof ValidationError)
-                res.status(400).json({ error: error.constructor.name, message: error.message })
+                alert(error.message)
             else
-                res.status(500).json({ error: SystemError.name, message: error.message })
+                alert('sorry, there was a problem. try again later.')
 
             console.error(error)
         }
